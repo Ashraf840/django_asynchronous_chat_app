@@ -1,0 +1,6 @@
+************ Django Channels
+1. As every client has a reply_channel
+2. Keep track of user in a connected list
+3. Chat app -> multiple users (one room)
+4. Channels uses groups
+    -> Add users' channel into the group

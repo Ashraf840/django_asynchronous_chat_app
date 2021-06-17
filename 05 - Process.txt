@@ -1,0 +1,13 @@
+************ Processes
+1. Install Django Channels
+2. Create Django templates/ Views
+3. Channels Routing
+4. Consumer (view)
+5. Template Configuration Handle WS (WebSockets)
+
+
+**** In a normal Django App:
+URLs -> Views -> Execute func & return data
+
+**** In Django Channels:
+Routing -> Consumers -> Execute func & return data

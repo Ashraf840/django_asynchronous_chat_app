@@ -1,0 +1,6 @@
+1. from "chatroom.html"
+    -> Learn django json_script
+    -> Learn JSON.parse in JavaScript
+
+2. self.room_name = self.scope['url_route']['kwargs']['room_name']
+    from "chat_proj/chatApp/consumers.py" file's class "ChatRoomConsumer"

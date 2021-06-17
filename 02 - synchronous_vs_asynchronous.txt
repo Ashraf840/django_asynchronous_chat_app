@@ -1,0 +1,22 @@
+Synchronous vs Asynchronous
+
+******* Django/Webpages mostly Synchronous
+    1. Web synchronous request (HTTP request)
+    2. send request -> stop executing -> wait for reply
+    3. HTTP 200 (ok/ success) or HTTP 404 etc. (or timeout)
+
+** Simple Term:
+We send a msg/ req, (waiting period), then we get return. 
+Then we send another msg/ req, (waiting period), then we get return.
+
+
+******* Asynchronous
+    1. Make request "launch" the request
+    2. Forget about it -> carry on executing tasks
+    3. Define/ create a callback function
+
+** Simple Term:
+We launch a request, then we continue to do what we are doing.
+So, there's no waiting for reply here/ expectation for a reply,
+Thus here we forget about it, we carry on executing the tasks,
+and then eventually we might then get a reply.

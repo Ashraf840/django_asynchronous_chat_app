@@ -1,0 +1,30 @@
+Django Coverage/ Processes
+    1. WebSocket's
+    2. ASGI
+    3. Channels
+
+
+Project Specifications:
+    1. Real live chat (multiple users)
+    2. User Registration
+    3. Track conversation and users in chat
+    4. Record/ save conversations
+    5. Delete/ edit messages (allow users to dlt/ edit msgs)
+    6. .........
+
+
+
+Project Brief:
+    In a chatroom situation, we send a msg to a chatroom, we can see it, 
+    everyone else can see it. But we might not get reply. And then, 
+    someone eventually might say something. And then that information 
+    gets sent back to us. So here we're working in real-time. Asynchronous 
+    environment will allow us to work in real-time. We can recieve messages 
+    whenever they might occur. 
+
+    Whereas, in HTTP in synchronous way, will only going to recieve the message, 
+    when we actually make a request. 
+
+
+Alongside open the following documentation link:
+    https://channels.readthedocs.io/en/latest/topics/channel_layers.html

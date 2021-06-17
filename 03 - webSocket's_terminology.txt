@@ -1,0 +1,16 @@
+*********** Terminology of WebSocket (WS)
+
+1. Bi-directional Protocol
+    server & client can push messages at any time
+    (HTTP is uni-directional)
+    (Both WS & HTTP can be utilize over TCP)
+
+2. Full-duplex Communication
+    client & server can talk to each other independently at the same time.
+    (supported by all the most/ modern browser's)
+
+3. Secured WebSocket's (WSS)
+    (Secured version of WS)
+
+
+** WebSockets can be enabled to a particular web-page.

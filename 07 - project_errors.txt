@@ -1,0 +1,4 @@
+1. [SOLVED] The problem with "websocket_urlpatterns", which was not letting the front-end web 
+    to connect and generate the default text msg generated fron the WebSocket server
+Solution: from the comment of "Жук Обычниик" in the youtube video
+    https://www.youtube.com/watch?v=F4nwRQPXD8w&t=4173s

@@ -1,0 +1,73 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static 'css/chat_room.css' %}">
+
+        <title>Asynchrounous Chatroom | Django</title>
+    </head>
+    <body>
+
+        <!-- Chat text area -->
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampeFormContralLabel" class="h4 pt-5">Chatroom</label>
+                            <textarea class="form-control" id="chat-text-area" rows="10" readonly="readonly"></textarea> <br />
+                        </div>
+                        <div class="form-group">
+                            <!-- Place the new msg inside the textarea -->
+                            <input class="form-control" type="text" id="input" onkeydown="return (event.keyCode!=13);"> <br />
+                        </div>
+                        <input class="btn btn-secondary btn-lg btn-block" id="submit" type="button" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assuming the user is logged in -->
+        {{ user }}      
+
+
+        
+        <!-- the data inside the func "tester_message" from "chatApp/consumers.py" will be passed into this div -->
+        <!-- <div id="user-hello"></div> -->
+
+
+        
+        <!-- Collect the "room_name" var from the python backend & utilize django "json_script" and put that inside the key-value obj -->
+        <!-- json obj ->  (key : value = room-name : room_name)  -->
+        <!-- After collecting the data, pass the content to this pages JS Script -->
+        {{ room_name|json_script:"room-name" }}     <!-- Django provides this "json_script" technology -->
+
+        <!-- Collecting the username from the backend -->
+        {{ request.user.username|json_script:"user_username" }} <!-- Sent from backend, now will padd to the frontend JS ("static/js/setup_websocket.js") 2nd phase-->>
+
+
+
+    </body>
+        <!-- WARNING: The JS need to remain in order -->
+        <!-- [pt-1] Setup the connection socket with the WebSocket using JS -->
+        <script src="{% static 'js/setup_websocket.js' %}"></script>
+
+        <!-- [pt-2] sending msg from the front-end -->
+        <script src="{% static 'js/ws_msg_from_frontend.js' %}"></script>
+
+        <!-- [pt-3] prevent user to type anything inside the textarea -->
+        <script src="{% static 'js/prevent_user_input_textarea.js' %}"></script>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</html>
